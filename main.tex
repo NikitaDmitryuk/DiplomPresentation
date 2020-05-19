@@ -1,4 +1,3 @@
-%\graphicspath{ {./images/},{./images2/}}
 
 \documentclass[pdf,hyperref={unicode}]{beamer}
 \usepackage[T2A]{fontenc}
@@ -12,11 +11,8 @@
 \usefonttheme[onlymath]{serif}
 \usecolortheme{dove}
 \graphicspath{{./images/}{./images2/}{./Ris/}}
+\setbeamertemplate{navigation symbols}{}
 
-%\title{Glass formation}
-%\author{студент ФН4-82Б Хижик А.И.}
-%\institute{BMSTU$\qquad$\\}
-%\date{31.04.20}
 
 \begin{document}% начало презентации
 
@@ -60,7 +56,11 @@
 \end{center}
 \end{frame}
 
+
+
 \section{Введение}
+
+
 
 \begin{frame}
 	\transdissolve[duration=0.2]
@@ -79,22 +79,40 @@
 	
 \end{frame}
 
+
+
 \begin{frame}
 	\transdissolve[duration=0.2]
 	\frametitle{Задачи работы}
-	
-	\begin{enumerate}
+	\footnotesize{
+\begin{enumerate}
 \item Разработка программного комплекса для расчета явлений переноса в $2D$ системах.
 \item Разработка методов определения термодинамических свойств системы по распределениям плотностей. 
 \item Усовершенствование метода распознавание фаз и построения фазовых диаграмм.
 \item Применение разработанных методов на различных потенциалах взаимодействия.
 \item Применение наработок для изучения влияния потенциала взаимодействия на различные термодинамические параметры.
 \end{enumerate}
-	
+	}
 \end{frame}
 
 
+
+
 \section{Глава 2}
+
+
+
+\begin{frame}
+\begin{center}
+\begin{LARGE}
+\textbf{ГЛАВА 2} \\
+\end{LARGE}
+\vspace{5mm}
+\textbf{<<ВЛИЯНИЕ ДАЛЬНОДЕЙСТВИЯ ПРИТЯЖЕНИЯ НА ФАЗОВЫЕ ДИАГРАММЫ>>}
+\end{center}
+\end{frame}
+
+
 \subsection{Разбиение на ячейки вороного}
 
 
@@ -322,6 +340,9 @@ R_i &= \frac{1}{N_{ni} + 1} \left( R_{0i} + \sum\limits_{j=1}^{N_{ni}} R_{0j} \r
 \end{frame}
 
 
+
+
+
 \subsection{Построение фазовой диаграммы}
 
 
@@ -388,7 +409,9 @@ R_i &= \frac{1}{N_{ni} + 1} \left( R_{0i} + \sum\limits_{j=1}^{N_{ni}} R_{0j} \r
 \end{frame}
 
 
-\section{Результаты главы 2}
+\section{Результаты Главы 2}
+
+\subsection{Построение фазовых диаграмм для различных потенциалов взаимодействия}
 
 
 \begin{frame}
@@ -489,7 +512,7 @@ $\rho_0$ & 0.28  &  0.4  &  0.4  &  0.4  \\ \hline
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=\textwidth]{classification}
-\caption{Классификация частиц в исследуемой системы на примере системы c потенциалом взаимодействия Леннарда-Джонса при различной температуре.}
+\caption{\tiny Классификация частиц в исследуемой системы на примере системы c потенциалом взаимодействия Леннарда-Джонса при различной температуре.}
 \label{risClassExp}
 \end{center}
 \end{figure}
@@ -517,7 +540,7 @@ $\rho_0$ & 0.28  &  0.4  &  0.4  &  0.4  \\ \hline
 \begin{minipage}[h]{0.47\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{plot_hist_all_0.600}
 \end{minipage}
-\caption{Распределение плотностей частиц конденсата и газа при различных температурах. Синим цветом обозначен конденсат, оранжевым  - газ.}
+\caption{\tiny Распределение плотностей частиц конденсата и газа при различных температурах. Синим цветом обозначен конденсат, оранжевым  - газ.}
 \label{risRhoM}
 \end{center}
 \end{figure}
@@ -564,6 +587,17 @@ $\rho_0$ & 0.28  &  0.4  &  0.4  &  0.4  \\ \hline
 
 \begin{column}{0.45\linewidth}
 \uncover<2->
+{\tiny{
+\begin{equation}
+\begin{aligned}
+\rho_l - \rho_g &\simeq A (T_{CP} - T)^{\beta_c} \\
+\frac{\rho_l + \rho_g}{2} &\simeq \rho_{CP} + a(T_{CP} - T)
+\end{aligned}
+\label{eqFitFhase}
+\end{equation}
+где $T_{CP}, \rho_{CP}$ - эффективная температура и плотность критической точки, $A, a$ - варьируемые параметры, $\rho_l, \rho_g$ - плотность жидкости и газа соответственно, $\beta_c$ - критический индекс системы.
+}}
+\uncover<3->
 {
 \tiny{
 \begin{table}[h]
@@ -586,6 +620,488 @@ LJ12-6  & 0.40  &  0.51   &  0.39   \\ \hline
 
 \end{columns}
 \end{frame}
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+\frametitle{Влияние дальнодействия притяжения}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{effect of long-range attraction}
+\caption{Отношение температур критической к тройной в зависимости от степени $m$ в уравнении \ref{eqLJ} потенциала.}
+\label{risTcpTtp}
+\end{center}
+\end{figure}
+
+\end{frame}
+
+
+
+\subsection{Анализ гистограмм распределения плотностей}
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+\frametitle{Анализ гистограмм распределения плотностей}
+
+\begin{columns}
+
+\begin{column}{0.45\linewidth}
+\uncover<1->
+{\tiny{
+Равновесные колебания вблизи среднего значения объема определяются уравнением состояния системы, и соответствующая функция распределения вероятности $p(V)$ равна:
+\begin{equation}
+p(V) \varpropto \exp\left[ \frac{1}{2T} \left( \frac{\partial P}{\partial V} \right)  \left(V - V_0 \right)^2 \right],
+\label{eqPv}
+\end{equation}
+где $P$ - давление, $V_0$ - максимум распределения объема, $V$ - объем.
+
+Сделав замену $V = 1 / \rho$, получим следующее уравнение для аппроксимации верхушки гистограмм:
+\begin{equation}
+\begin{aligned}
+p(\rho) &\varpropto \exp \left[ - K \left(\rho_{max}- \rho \right)^2 \right] \\
+K &= \frac{1}{2T\rho_{max}^2} \left( \frac{\partial P}{\partial \rho} \right)
+\end{aligned}
+\label{eqFitRho}
+\end{equation}
+где $\rho_{max}$ - плотность максимума распределения.
+}}
+\end{column}
+
+
+\begin{column}{0.65\linewidth}
+\uncover<2->
+{
+\begin{figure}[h]
+\center{\includegraphics[width=\textwidth,  keepaspectratio]{FitDensity}}
+\caption{\tiny Аппроксимация пика распределения плотности при различной
+температуре на примере потенциала LJ12-6.}
+\end{figure}
+}
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+
+\begin{columns}
+
+\begin{column}{0.7\linewidth}
+\uncover<1->
+{
+\begin{figure}[h]
+\begin{center}
+\begin{minipage}[h]{0.45\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_K_Potential LJ-12-3_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.45\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_K_Potential LJ-12-4_1}
+\end{minipage}
+
+\begin{minipage}[h]{0.45\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_K_Potential LJ-12-5_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.45\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_K_Potential LJ-12-6_1}
+\end{minipage}
+\caption{Температурная зависимость коэффициента $K$.}
+\label{risK}
+\end{center}
+\end{figure}
+}
+\end{column}
+
+\begin{column}{0.45\linewidth}
+\uncover<2->
+{\tiny{
+По коэффициенту $K$ можно определить сжимаемость и адиабатическая скорость звука:
+\begin{equation}
+\begin{aligned}
+\beta = \frac{1}{\rho_0} \frac{\partial \rho}{\partial P} \\
+C = \sqrt{\frac{\partial P}{\partial \rho}},
+\end{aligned}
+\label{eqCBeta}
+\end{equation}
+где $\beta$ - сжимаемости, $C$ - скорость звука в веществе.
+
+Выразив данные величины через коэффициент $K$, получим следующие формулы:
+\begin{equation}
+\begin{aligned}
+\beta = \frac{1}{2T\rho_0\rho_{max}^2K}\\
+C = \rho_{max}\sqrt{2TK}
+\end{aligned}
+\label{eqCBetaK}
+\end{equation}
+}}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+
+\begin{figure}[h]
+\begin{center}
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_compress_Potential LJ-12-3_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_compress_Potential LJ-12-4_1}
+\end{minipage}
+
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_compress_Potential LJ-12-5_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_compress_Potential LJ-12-6_1}
+\end{minipage}
+\caption{\tiny Температурная зависимость $\beta$ при различных потенциалах.}
+\label{risBeta}
+\end{center}
+\end{figure}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+
+\begin{figure}[h]
+\begin{center}
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{sound_speed_Potential LJ-12-3_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{sound_speed_Potential LJ-12-4_1}
+\end{minipage}
+
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{sound_speed_Potential LJ-12-5_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{sound_speed_Potential LJ-12-6_1}
+\end{minipage}
+\caption{\tiny Температурная зависимость скорости звука при различных потенциалах.}
+\label{risC}
+\end{center}
+\end{figure}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+
+\begin{figure}[h]
+\begin{center}
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_moment_Potential LJ-12-3_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_moment_Potential LJ-12-4_1}
+\end{minipage}
+
+
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_moment_Potential LJ-12-5_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_moment_Potential LJ-12-6_1}
+\end{minipage}
+\caption{\tiny Температурная зависимость моментов величины $\mu_i = \mathbb{M} \left[ |\rho - \mathbb{M} \rho|^i \right]$.}
+\label{risMu}
+\end{center}
+\end{figure}
+
+\end{frame}
+
+
+
+
+\section{Глава 3}
+
+
+\begin{frame}
+\begin{center}
+\begin{LARGE}
+\textbf{ГЛАВА 3} \\
+\end{LARGE}
+\vspace{5mm}
+\textbf{<<ДИФФУЗИЯ ОТ ТРОЙНОЙ ДО \\ КРИТИЧЕСКОЙ ТОЧКИ>>}
+\end{center}
+\end{frame}
+
+
+\subsection{Вычисление параметров переноса}
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+\frametitle{Вычисление коэффициента диффузии методами МД}
+
+\begin{columns}
+
+\begin{column}{0.6\linewidth}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\textwidth]{Diffusion}
+\caption{\tiny Смещение частиц от начального положения за 10 кадров моделирования. Цветом показана величина смещения в $\sigma$ (единица измерения длинны).}
+\label{risTreck}
+\end{center}
+\end{figure}
+
+\end{column}
+\begin{column}{0.5\linewidth}
+\tiny{
+
+Зная смещения всех частиц от их изначального положения в системе, с $t = 0$, можно рассчитать среднеквадратичное смещение частиц с помощью уравнения:
+\begin{equation}
+    \sigma^2(t) = \sum\limits_{\alpha = 1}^{N(t)} (r_{\alpha}(t) - r_{\alpha}(0))^2 / N(t),
+    \label{eqRMS}
+\end{equation}
+где $\sigma^2(t)$ - среднеквадратичное смещение частиц, $N(t)$ - количество частиц в данный момент времени в кадре, $r_{\alpha}(t)$ - положение частицы в момент времени $t$, $r_{\alpha}(0)$ - положение частицы в начальный момент времени $t = 0$.
+
+}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+\frametitle{Вычисление коэффициента диффузии методами МД}
+
+\begin{columns}
+
+\begin{column}{0.6\linewidth}
+
+\begin{figure}[h]
+\begin{center}
+\begin{minipage}[h]{0.45\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{diffusion_fit_0.36}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.45\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{diffusion_fit_0.44}
+\end{minipage}
+
+\begin{minipage}[h]{0.45\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{diffusion_fit_0.52}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.45\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{diffusion_fit_0.60}
+\end{minipage}
+\caption{\tiny Временная зависимость среднеквадратичного смещения частиц для различных температур на примере потенциала Леннарда-Джонса.}
+\label{risRMS}
+\end{center}
+\end{figure}
+
+\end{column}
+\begin{column}{0.5\linewidth}
+\tiny{
+
+Так как для двумерной системы верно равенство $\sigma^2(t) = 4Dt$, то коэффициент диффузии выражается следующей формулой:
+\begin{equation}
+    D = \frac{\sigma^2(t)}{4t},
+    \label{eqD}
+\end{equation}
+где $D$ - коэффициент диффузии в веществе.
+
+Его можно получить путем аппроксимации среднеквадратичного смещения функцией $\sigma^2(t) = 4Dt + a$, где $a$ - подгоночный коэффициент.
+
+Кроме диффузии можно вычислить мобильность частиц в системе, которая определяется следующим уравнением:
+\begin{equation}
+    \mu  = \frac{D}{T},
+    \label{eqMuDiff}
+\end{equation}
+где $\mu$ - мобильность частиц.
+}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+
+\section{Результаты Главы 3}
+\subsection{Температурная зависимость диффузии и мобильности}
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+
+\begin{figure}[h]
+\begin{center}
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_diffusion_Potential LJ-12-4_1}
+\end{minipage}
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_diffusion_Potential LJ-12-4_1}
+\end{minipage}
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_diffusion_Potential LJ-12-5_1}
+\end{minipage}
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_diffusion_Potential LJ-12-6_1}
+\end{minipage}
+\caption{\tiny Температурная зависимость коэффициента диффузии для различных потенциалов взаимодействия. Не доделана!}
+\label{risD}
+\end{center}
+\end{figure}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+
+\begin{figure}[h]
+\begin{center}
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_mobility_Potential LJ-12-4_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_mobility_Potential LJ-12-4_1}
+\end{minipage}
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_mobility_Potential LJ-12-5_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_mobility_Potential LJ-12-6_1}
+\end{minipage}
+\caption{\tiny Температурная зависимость мобильности для различных потенциалов взаимодействия. Не доделана!}
+\label{risMuDiff}
+\end{center}
+\end{figure}
+
+\end{frame}
+
+
+\subsection{Взаимосвязь термодинамических параметров, и параметров переноса}
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+
+\begin{figure}[h]
+\begin{center}
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_compress_mobility_Potential LJ-12-4_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_compress_mobility_Potential LJ-12-4_1}
+\end{minipage}
+
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_compress_mobility_Potential LJ-12-5_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_compress_mobility_Potential LJ-12-6_1}
+\end{minipage}
+\caption{\tiny Зависимость мобильности от сжимаемости для различных потенциалов. Не доделана!}
+\label{risMuBeta}
+\end{center}
+\end{figure}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+
+\begin{figure}[h]
+\begin{center}
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{sound_speed_mobility_Potential LJ-12-4_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{sound_speed_mobility_Potential LJ-12-4_1}
+\end{minipage}
+
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{sound_speed_mobility_Potential LJ-12-5_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{sound_speed_mobility_Potential LJ-12-6_1}
+\end{minipage}
+\caption{\tiny Зависимость скорости звука от мобильности для различных потенциалов. Не доделана!}
+\label{risCMu}
+\end{center}
+\end{figure}
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+	\transdissolve[duration=0.2]
+	\frametitle{Выводы работы}
+	\footnotesize{
+\begin{enumerate}
+\item Была проведена модернизация алгоритма классификации и определение плотностей фаз в системе.
+
+\item Установлена роль притяжения на фазовые диаграммы систем с потенциалом обобщенного Леннарда - Джонса.
+
+\item Представлен способ определения сжимаемости и скорости звука в веществе, используя только распределение плотностей ячеек вороного, а так же способ определения линии Уидома для плотности.
+
+\item Показано, что температурная зависимость мобильности частиц зависит линейно от температуры в промежутке между тройной и критической точкой.
+
+\item Кроме того, была рассмотрена связь термодинамических свойств системы с параметрами переноса в веществе, предложен способ классификации с помощью нейронной сети.
+
+\end{enumerate}
+	}
+\end{frame}
+
 
 
 
