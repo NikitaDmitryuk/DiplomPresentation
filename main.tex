@@ -1,0 +1,602 @@
+%\graphicspath{ {./images/},{./images2/}}
+
+\documentclass[pdf,hyperref={unicode}]{beamer}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[font=scriptsize,format=plain,labelfont=bf,up,textfont=it,up]{caption}
+\setbeamertemplate{caption}[numbered]
+
+\usetheme{Dresden}
+\usefonttheme[onlymath]{serif}
+\usecolortheme{dove}
+\graphicspath{{./images/}{./images2/}{./Ris/}}
+
+%\title{Glass formation}
+%\author{студент ФН4-82Б Хижик А.И.}
+%\institute{BMSTU$\qquad$\\}
+%\date{31.04.20}
+
+\begin{document}% начало презентации
+
+\begin{frame}
+	\begin{center}\tiny
+		Федеральное государственное бюджетное образовательное учреждение высшего образования «Московский государственный технический университет имени Н.Э. Баумана (национальный исследовательский университет)» (МГТУ им. Н.Э. Баумана)\\
+    \end{center}
+
+	\begin{center}
+		\includegraphics[width=0.15\linewidth]{emb}
+	\end{center}
+
+	\begin{center}
+\tiny \textbf{НАУЧНО-КВАЛИФИКАЦИОННАЯ РАБОТА}\\
+\tiny \textbf{<<Роль дальнодействия притяжения в фазовых диаграммах и диффузии\\ в двумерных системах с регулируемыми взаимодействиями>>}
+\end{center}
+
+	\vspace{0.5cm}
+	
+	\begin{columns}[T,onlytextwidth]
+                \begin{column}{0.50\textwidth}
+                        \begin{tabular}{ll}
+        \tiny Студент:  & \tiny Дмитрюк Никита     \\
+                   & \tiny гр. ФН4-81Б \\
+
+    \end{tabular}
+                \end{column}
+                \begin{column}{0.50\textwidth}
+                        \begin{tabular}{ll}
+        \tiny Руководитель:  & \tiny \textbf{Юрченко Станислав Олегович} \\
+& \tiny д.ф.-м.н., доцент каф. СМ13, \\	
+ & \tiny МГТУ им. Н.Э. Баумана.
+    \end{tabular}
+                \end{column}
+        \end{columns}
+        
+    
+\vfill
+\begin{center}
+\tiny Москва, $2020$
+\end{center}
+\end{frame}
+
+\section{Введение}
+
+\begin{frame}
+	\transdissolve[duration=0.2]
+	\frametitle{Актуальность}
+	
+	Для физики конденсированного состояния большой интерес представ-ляют такие явления, как кристаллизация, плавление, критические явле-ние, а так же их зависимость от свойств системы. Понимание влиянияэтих свойств на систему играет важную роль в материаловедении.На данный момент эти проблемы решаются с использованием мате-матических моделей систем.
+	
+\end{frame}
+
+\begin{frame}
+	\transdissolve[duration=0.2]
+	\frametitle{Цель работы}
+	
+	\textbf{Цель работы} --
+установить связь между дальнодействием притяжения в двумерной системе частиц, взаимодействующих посредством обобщенного потенциала Леннарда-Джонса, c фазовой диаграммой, и параметрами переноса.
+	
+\end{frame}
+
+\begin{frame}
+	\transdissolve[duration=0.2]
+	\frametitle{Задачи работы}
+	
+	\begin{enumerate}
+\item Разработка программного комплекса для расчета явлений переноса в $2D$ системах.
+\item Разработка методов определения термодинамических свойств системы по распределениям плотностей. 
+\item Усовершенствование метода распознавание фаз и построения фазовых диаграмм.
+\item Применение разработанных методов на различных потенциалах взаимодействия.
+\item Применение наработок для изучения влияния потенциала взаимодействия на различные термодинамические параметры.
+\end{enumerate}
+	
+\end{frame}
+
+
+\section{Глава 2}
+\subsection{Разбиение на ячейки вороного}
+
+
+\begin{frame}%Третий слайд
+\transdissolve[duration=0.2]
+\frametitle{Разбиение на ячейки вороного}
+
+\begin{columns}
+
+\uncover<1->
+{
+\begin{column}{0.3\linewidth}
+\begin{figure}[h]
+\center{\includegraphics[width=\textwidth, keepaspectratio]{deluanau}}
+\caption{Триангуляция Делоне}
+\end{figure}
+\end{column}
+}
+
+\uncover<2->
+{
+\begin{column}{0.3\linewidth}
+\begin{figure}[h]
+\center{\includegraphics[width=\textwidth, keepaspectratio]{Delaunay-voron}}
+\caption{Проведение перпендикуляров}
+\end{figure}
+\end{column}
+}
+
+\uncover<3->
+{
+\begin{column}{0.3\linewidth}
+\begin{figure}[h]
+\center{\includegraphics[width=\textwidth, keepaspectratio]{voronoiExp}}
+\caption{Ячейки Вороного}
+\end{figure}
+\end{column}
+}
+
+\end{columns}
+\end{frame}
+
+
+
+\begin{frame}%четвертый слайд
+\transdissolve[duration=0.2]
+\frametitle{Разбиение на ячейки вороного}
+
+\begin{columns}
+
+\begin{column}{0.47\linewidth}
+\begin{figure}[h]
+
+\center{\includegraphics[width=\textwidth,  keepaspectratio]{PIVTURES}}
+
+\end{figure}
+\end{column}
+
+\pause \begin{column}{0.47\linewidth}
+\begin{itemize}
+\item Найти соседей каждой частицы
+\item Плотности
+\item Параметры порядка
+\item Эффективные потенциалы
+\item Радиусы инерции сечения
+\item И т.д.
+\end{itemize}
+\end{column}
+
+
+\end{columns}
+\end{frame}
+
+
+\subsection{Метод распознавания фаз}
+
+
+\begin{frame}%пятый слайд
+\transdissolve[duration=0.2]
+\frametitle{Параметр иррегулярности $R$}
+
+\begin{columns}
+
+\begin{column}{0.47\linewidth}
+\uncover<1->{
+\begin{figure}[h]
+\center{\includegraphics[width=0.7\textwidth, keepaspectratio]{rgcell}}
+\caption{ \tiny а) Кристалл б) Газ.}
+\end{figure}
+}
+
+\uncover<2->{
+\tiny{
+\begin{equation}
+\begin{aligned}
+R_{0i} &= \sqrt{\frac{\pi}{2 S_i N_{ni}^2} \sum\limits_{i<k}^{N_{ni}} (r_{ij} - r_{ik})^2}, r_{ij} = |r_i - r_j| \\
+R_i &= \frac{1}{N_{ni} + 1} \left( R_{0i} + \sum\limits_{j=1}^{N_{ni}} R_{0j} \right)
+\end{aligned}
+\label{eqR}
+\end{equation}
+}
+\tiny{где $S_i$ - площадь ячейки, $N_{ni}$ - количество соседей, $r_{ij}$ - расстояние от рассматриваемой частицы до соседней.}
+}
+
+\end{column}
+\begin{column}{0.47\linewidth}
+\uncover<3->
+{
+\begin{figure}[h]
+\center{\includegraphics[width=\textwidth,  keepaspectratio]{MPI-Figure1}}
+\caption{ \tiny Распределение параметра $R$.}
+\end{figure}
+}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+\frametitle{Корректировка фаз}
+\begin{columns}
+
+\begin{column}{0.47\linewidth}
+\uncover<1->
+{
+\begin{figure}[h]
+\center{\includegraphics[width=\textwidth,  keepaspectratio]{PRM-Figure1-eps-converted-to}}
+\caption{\tiny Полный алгоритм классификации частиц в системе.}
+\end{figure}
+}
+\end{column}
+
+\begin{column}{0.47\linewidth}
+\uncover<2->
+{\tiny{
+Корректировка фаз включает в себя следующие условия:
+\begin{itemize}
+\item частица конденсата, не имеющая среди своих соседей частиц того же типа, является поверхностью.
+\item частица конденсата, которая имеет среди соседних частиц, газовую частицу, является поверхностью.
+\item газовая частица, не имеющая соседних частиц того же класса,  является поверхностью.
+\item частица поверхности, все соседи которой принадлежат к классу "конденсат" или "газ", так же принадлежат к этому классу.
+\end{itemize}
+}}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+\frametitle{Недостатки метода распознавания фаз}
+
+\begin{columns}
+
+\begin{column}{0.47\linewidth}
+\uncover<1->
+{
+\begin{figure}[h]
+\center{\includegraphics[width=\textwidth,  keepaspectratio]{phas_200_0.48_cut}}
+\caption{\tiny Результат алгоритма классификации.}
+\end{figure}
+}
+\end{column}
+
+
+\begin{column}{0.47\linewidth}
+\uncover<2->
+{\tiny{
+Недостатки метода распознавания фаз:
+\begin{itemize}
+\item распознавание пустот внутри конденсированного кластера, как его часть.
+\item скопления поверхностных частиц, которые могут быть небольшими кластерами.
+\item нерегулярная граница кластера из поверхностных частиц.
+\item частицы на поверхности кластера с низкой плотностью, распознанные как конденсат а не поверхность, вносят ошибку в вычисления мат. ожидания плотности.
+\end{itemize}
+}}
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+\frametitle{Изменения в корректировке фаз}
+
+\begin{columns}
+
+\begin{column}{0.47\linewidth}
+\uncover<1->
+{\tiny{
+Дополнительные условия в корректировки фаз:
+\begin{itemize}
+\item частица поверхности, не имеющая среди соседей частиц газа, является конденсатом.
+\item поверхностная частица, не имеющая среди соседей частиц конденсата, является газом.
+\item частицы конденсата, плотность которых сопоставима с плотностью поверхностных частиц, являются поверхностью. Данная проверка делается дважды (перед всеми остальными и после).
+\item частица конденсата, которая имеет меньше 3 соседних частиц, так же принадлежащих к конденсату, является поверхностью.
+\end{itemize}
+}}
+\end{column}
+
+
+\begin{column}{0.47\linewidth}
+\uncover<2->
+{
+\begin{figure}[h]
+\center{\includegraphics[width=\textwidth,  keepaspectratio]{phas_2}}
+\caption{\tiny Результат обновленного алгоритма классификации.}
+\end{figure}
+}
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+
+\subsection{Построение фазовой диаграммы}
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+\frametitle{Нахождение точек на фазовой диаграмме}
+\begin{columns}
+
+
+\begin{column}{0.55\linewidth}
+\uncover<1->
+{
+\begin{figure}[h]
+\center{\includegraphics[width=\textwidth,  keepaspectratio]{Mrho}}
+\end{figure}
+}
+\end{column}
+
+\begin{column}{0.4\linewidth}
+\uncover<2->
+{
+\begin{figure}[h]
+\center{\includegraphics[width=\textwidth,  keepaspectratio]{voronoiExp}}
+\end{figure}
+}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+\frametitle{Изменения в определении плотности газа}
+\begin{columns}
+
+
+\begin{column}{0.55\linewidth}
+\uncover<1->
+{
+\begin{figure}[h]
+\center{\includegraphics[width=\textwidth,  keepaspectratio]{plot_hist_all_0.520}}
+\end{figure}
+}
+\end{column}
+
+\begin{column}{0.4\linewidth}
+\uncover<2->
+{
+\tiny{
+Плотность газа в системе вычисляется косвенно по формуле:
+\begin{equation}
+\rho_{gas} = \frac{N_{g}}{S - (N_{b} + N_{c}) / \mathbb{M}\rho_c},
+\label{eqGas}
+\end{equation}
+где $S$ - суммарная площадь всех рассматриваемых кадров, $N_g, N_b, N_c$ - суммарное число частиц газа, поверхности и конденсата соответственно на всех рассматриваемых кадрах моделирования, $\mathbb{M}\rho_c$ - мат. ожидание плотности частиц конденсата на всех рассматриваемых кадрах.
+}
+}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+
+\section{Результаты главы 2}
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+\frametitle{Описание смоделированных систем}
+
+\begin{columns}
+
+\begin{column}{0.45\linewidth}
+\begin{figure}[h]
+
+\center{\includegraphics[width=\textwidth,  keepaspectratio]{phas_1}}
+\caption{\tiny Система LJ 12-6 при $T / T_{cp} = 0.95$.}
+\end{figure}
+\end{column}
+
+\begin{column}{0.5\linewidth}
+\tiny{
+
+\begin{equation}
+U(r) = 4\varepsilon \left[ \left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sigma}{r}\right)^{m} \right], m = 3, 4, 5, 6.
+\label{eqLJ}
+\end{equation}
+
+Каждое моделирование проводилось при постоянной температуре и плотности. Статистика собрана по 150 кадрам моделирования, на каждом из которых примерно по 3600 частиц. Все величины на графиках являются обезразмеренными с помощью $\varepsilon = 1, \sigma = 1, m = 1, k_B = 1$.
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{| l | l | l | l | l |}
+\hline
+    & LJ12-3 & LJ12-4 & LJ12-5 & LJ12-6 \\ \hline
+$m$   &    3    &     4   &    5    &    6    \\ \hline
+$\Delta T$ & 0.03 & 0.03 & 0.02 & 0.02 \\ \hline
+$\rho_0$ & 0.28  &  0.4  &  0.4  &  0.4  \\ \hline
+\end{tabular}
+\end{center}
+\caption{\tiny Параметры моделирования исследуемых систем. $m$ - степень слагаемого в уравнении \ref{eqLJ}, $\Delta T$ - шаг по температуре,  $\rho_0$ - плотность системы в целом.}
+\label{tablParam}
+\end{table}
+
+}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+\frametitle{Применение метода ячеек Вороного}
+\begin{columns}
+
+
+\begin{column}{0.54\linewidth}
+\uncover<1->
+{
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\textwidth]{Voronoi}
+\caption{\tiny Разбиение на ячейки Вороного различной температуре исследуемой в данной работе системы на примере потенциала Леннарда-Джонса.}
+\label{risvoronoiExp}
+\end{center}
+\end{figure}
+}
+\end{column}
+
+\begin{column}{0.6\linewidth}
+\uncover<2->
+{
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\textwidth]{RG}
+\caption{\tiny Параметр иррегулярности $R$ в исследуемой системе, на примере потенциала взаимодействия Леннарда-Джонса при различной температуре.}
+\label{risIregExp}
+\end{center}
+\end{figure}
+}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+\begin{columns}
+
+
+\begin{column}{0.5\linewidth}
+\uncover<1->
+{
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\textwidth]{classification}
+\caption{Классификация частиц в исследуемой системы на примере системы c потенциалом взаимодействия Леннарда-Джонса при различной температуре.}
+\label{risClassExp}
+\end{center}
+\end{figure}
+}
+\end{column}
+
+\begin{column}{0.65\linewidth}
+\uncover<2->
+{
+\begin{figure}[h]
+\begin{center}
+
+\begin{minipage}[h]{0.47\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_hist_all_0.360}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.47\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_hist_all_0.440}
+\end{minipage}
+
+\begin{minipage}[h]{0.47\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_hist_all_0.520}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.47\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_hist_all_0.600}
+\end{minipage}
+\caption{Распределение плотностей частиц конденсата и газа при различных температурах. Синим цветом обозначен конденсат, оранжевым  - газ.}
+\label{risRhoM}
+\end{center}
+\end{figure}
+}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+\frametitle{Фазовые диаграммы при различном притяжении}
+
+\begin{columns}
+
+\begin{column}{0.72\linewidth}
+\uncover<1->
+{
+\begin{figure}[h]
+\begin{center}
+\begin{minipage}[h]{0.47\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_phase_diagram_Potential LJ-12-3_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.47\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_phase_diagram_Potential LJ-12-4_1}
+\end{minipage}
+
+\begin{minipage}[h]{0.47\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_phase_diagram_Potential LJ-12-5_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.47\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_phase_diagram_Potential LJ-12-6_1}
+\end{minipage}
+\label{risPhaseDiagrammExp}
+\end{center}
+\end{figure}
+}
+\end{column}
+
+\begin{column}{0.45\linewidth}
+\uncover<2->
+{
+\tiny{
+\begin{table}[h]
+%\begin{center}
+\begin{tabular}{| l | l | l | l | l |}
+\hline
+    & $T_{TP}$  & $T_{CP}$  & $\rho_{CP}$   \\ \hline
+LJ12-3  & 1.09  &  2.69   &  0.28   \\ \hline
+LJ12-4  & 0.68  & 1.13    & 0.35    \\ \hline
+LJ12-5  & 0.51  &  0.76   &  0.36   \\ \hline
+LJ12-6  & 0.40  &  0.51   &  0.39   \\ \hline
+\end{tabular}
+%\end{center}
+\caption{\tiny Параметры фазовых диаграмм для различных потенциалов взаимодействия. $T_{CP}$ - критическая температура, $\rho_{CP}$ - критическая плотность системы, $T_{TP}$ - температура тройной точки.}
+\label{tablSystemConst}
+\end{table}
+}
+}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+
+
+
+\section{Итоги ВКР}
+
+
+
+\begin{frame}
+\center{\Huge Спасибо за внимание!}
+\end{frame}
+
+
+\end{document}
