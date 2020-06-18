@@ -4,10 +4,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
 \usepackage{amsmath,amssymb}
-\usepackage[font=scriptsize,format=plain,labelfont=bf,up,textfont=it,up]{caption}
-\setbeamertemplate{caption}[numbered]
-
-\usetheme{Dresden}
+%\usepackage[font=scriptsize,format=plain,labelfont=bf,up,textfont=it,up]{caption}
+%\setbeamertemplate{caption}[numbered]
+\usepackage[labelformat=empty]{caption}
+\usetheme[numbers]{Dresden}
 \usefonttheme[onlymath]{serif}
 \usecolortheme{dove}
 \graphicspath{{./images/}{./images2/}{./Ris/}}
@@ -26,7 +26,7 @@
 	\end{center}
 
 	\begin{center}
-\tiny \textbf{НАУЧНО-КВАЛИФИКАЦИОННАЯ РАБОТА}\\
+\tiny \textbf{ВЫПУСКНАЯ КВАЛИФИКАЦИОННАЯ РАБОТА}\\
 \tiny \textbf{<<Роль дальнодействия притяжения в фазовых диаграммах и диффузии\\ в двумерных системах с регулируемыми взаимодействиями>>}
 \end{center}
 
@@ -35,16 +35,15 @@
 	\begin{columns}[T,onlytextwidth]
                 \begin{column}{0.50\textwidth}
                         \begin{tabular}{ll}
-        \tiny Студент:  & \tiny Дмитрюк Никита     \\
+        \tiny Студент:  & \tiny \textbf{Н.А Дмитрюк}    \\
                    & \tiny гр. ФН4-81Б \\
 
     \end{tabular}
                 \end{column}
                 \begin{column}{0.50\textwidth}
                         \begin{tabular}{ll}
-        \tiny Руководитель:  & \tiny \textbf{Юрченко Станислав Олегович} \\
-& \tiny д.ф.-м.н., доцент каф. СМ13, \\	
- & \tiny МГТУ им. Н.Э. Баумана.
+        \tiny Руководитель:  & \tiny \textbf{С.О. Юрченко}
+                            
     \end{tabular}
                 \end{column}
         \end{columns}
@@ -58,7 +57,7 @@
 
 
 
-\section{Введение}
+%\section{Введение}
 
 
 
@@ -66,7 +65,12 @@
 	\transdissolve[duration=0.2]
 	\frametitle{Актуальность}
 	
-	Для физики конденсированного состояния большой интерес представ-ляют такие явления, как кристаллизация, плавление, критические явле-ние, а так же их зависимость от свойств системы. Понимание влиянияэтих свойств на систему играет важную роль в материаловедении.На данный момент эти проблемы решаются с использованием мате-матических моделей систем.
+	\normalsize{
+	
+Знание зависимости внешних параметров системы от потенциала взаимодействия, является открытым вопросом в физике мягкой материи. Точное прогнозирование, или хотя бы качественная их оценка, термодинамических параметров вещества, для которого известен состав и внешние условия (например, внешние электрические или магнитные поля), позволят избежать дорогостоящих исследований поведения каждого отдельного вещества. 
+
+Также это открывает возможности для создания новых веществ, удовлетворяющих потребности в определенном фазовом поведении, с нужными температурами плавления, скоростью звука в веществе или диффузией.
+	}
 	
 \end{frame}
 
@@ -98,15 +102,12 @@
 
 
 
-\section{Глава 2}
+%\section{Распознавание фаз}
 
 
 
 \begin{frame}
 \begin{center}
-\begin{LARGE}
-\textbf{ГЛАВА 2} \\
-\end{LARGE}
 \vspace{5mm}
 \textbf{<<ВЛИЯНИЕ ДАЛЬНОДЕЙСТВИЯ ПРИТЯЖЕНИЯ НА ФАЗОВЫЕ ДИАГРАММЫ>>}
 \end{center}
@@ -153,6 +154,12 @@
 }
 
 \end{columns}
+
+\vspace{17mm}
+\tiny{
+Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional condensable systems //The Journal of Physical Chemistry C. – 2017. – Т. 121. – №. 48. – С. 26860-26868.
+}
+
 \end{frame}
 
 
@@ -163,6 +170,7 @@
 
 \begin{columns}
 
+\uncover<1->{
 \begin{column}{0.47\linewidth}
 \begin{figure}[h]
 
@@ -170,8 +178,10 @@
 
 \end{figure}
 \end{column}
+}
 
-\pause \begin{column}{0.47\linewidth}
+\begin{column}{0.47\linewidth}
+\uncover<2->{
 \begin{itemize}
 \item Найти соседей каждой частицы
 \item Плотности
@@ -180,10 +190,16 @@
 \item Радиусы инерции сечения
 \item И т.д.
 \end{itemize}
+}
 \end{column}
 
 
 \end{columns}
+
+\vspace{15mm}
+\tiny{
+Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional condensable systems //The Journal of Physical Chemistry C. – 2017. – Т. 121. – №. 48. – С. 26860-26868.
+}
 \end{frame}
 
 
@@ -228,6 +244,10 @@ R_i &= \frac{1}{N_{ni} + 1} \left( R_{0i} + \sum\limits_{j=1}^{N_{ni}} R_{0j} \r
 }
 \end{column}
 \end{columns}
+\vspace{4mm}
+\tiny{
+Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional condensable systems //The Journal of Physical Chemistry C. – 2017. – Т. 121. – №. 48. – С. 26860-26868.
+}
 \end{frame}
 
 
@@ -262,6 +282,11 @@ R_i &= \frac{1}{N_{ni} + 1} \left( R_{0i} + \sum\limits_{j=1}^{N_{ni}} R_{0j} \r
 \end{column}
 
 \end{columns}
+
+\vspace{12mm}
+\tiny{
+Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional condensable systems //The Journal of Physical Chemistry C. – 2017. – Т. 121. – №. 48. – С. 26860-26868.
+}
 \end{frame}
 
 
@@ -299,6 +324,11 @@ R_i &= \frac{1}{N_{ni} + 1} \left( R_{0i} + \sum\limits_{j=1}^{N_{ni}} R_{0j} \r
 \end{column}
 
 \end{columns}
+
+\vspace{5mm}
+\tiny{
+Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional condensable systems //The Journal of Physical Chemistry C. – 2017. – Т. 121. – №. 48. – С. 26860-26868.
+}
 
 \end{frame}
 
@@ -371,6 +401,11 @@ R_i &= \frac{1}{N_{ni} + 1} \left( R_{0i} + \sum\limits_{j=1}^{N_{ni}} R_{0j} \r
 \end{column}
 
 \end{columns}
+
+\vspace{15mm}
+\tiny{
+Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional condensable systems //The Journal of Physical Chemistry C. – 2017. – Т. 121. – №. 48. – С. 26860-26868.
+}
 \end{frame}
 
 
@@ -409,7 +444,7 @@ R_i &= \frac{1}{N_{ni} + 1} \left( R_{0i} + \sum\limits_{j=1}^{N_{ni}} R_{0j} \r
 \end{frame}
 
 
-\section{Результаты Главы 2}
+%\section{Результаты анализа распределений}
 
 \subsection{Построение фазовых диаграмм для различных потенциалов взаимодействия}
 
@@ -432,7 +467,7 @@ R_i &= \frac{1}{N_{ni} + 1} \left( R_{0i} + \sum\limits_{j=1}^{N_{ni}} R_{0j} \r
 \tiny{
 
 \begin{equation}
-U(r) = 4\varepsilon \left[ \left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sigma}{r}\right)^{m} \right], m = 3, 4, 5, 6.
+U(r) = 4\varepsilon \left[ \left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sigma}{r}\right)^{m} \right], m = 3, 4, 5, 6, 7, 8, 9.
 \label{eqLJ}
 \end{equation}
 
@@ -445,7 +480,7 @@ U(r) = 4\varepsilon \left[ \left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sig
     & LJ12-3 & LJ12-4 & LJ12-5 & LJ12-6 \\ \hline
 $m$   &    3    &     4   &    5    &    6    \\ \hline
 $\Delta T$ & 0.03 & 0.03 & 0.02 & 0.02 \\ \hline
-$\rho_0$ & 0.28  &  0.4  &  0.4  &  0.4  \\ \hline
+$\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 \end{tabular}
 \end{center}
 \caption{\tiny Параметры моделирования исследуемых систем. $m$ - степень слагаемого в уравнении \ref{eqLJ}, $\Delta T$ - шаг по температуре,  $\rho_0$ - плотность системы в целом.}
@@ -605,7 +640,7 @@ $\rho_0$ & 0.28  &  0.4  &  0.4  &  0.4  \\ \hline
 \begin{tabular}{| l | l | l | l | l |}
 \hline
     & $T_{TP}$  & $T_{CP}$  & $\rho_{CP}$   \\ \hline
-LJ12-3  & 1.09  &  2.69   &  0.28   \\ \hline
+LJ12-3  & 1.09  &  2.69   &  0.26   \\ \hline
 LJ12-4  & 0.68  & 1.13    & 0.35    \\ \hline
 LJ12-5  & 0.51  &  0.76   &  0.36   \\ \hline
 LJ12-6  & 0.40  &  0.51   &  0.39   \\ \hline
@@ -621,22 +656,6 @@ LJ12-6  & 0.40  &  0.51   &  0.39   \\ \hline
 \end{columns}
 \end{frame}
 
-
-
-
-\begin{frame}
-\transdissolve[duration=0.2]
-\frametitle{Влияние дальнодействия притяжения}
-
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=0.6\textwidth]{effect of long-range attraction}
-\caption{Отношение температур критической к тройной в зависимости от степени $m$ в уравнении \ref{eqLJ} потенциала.}
-\label{risTcpTtp}
-\end{center}
-\end{figure}
-
-\end{frame}
 
 
 
@@ -667,7 +686,7 @@ K &= \frac{1}{2T\rho_{max}^2} \left( \frac{\partial P}{\partial \rho} \right)
 \end{aligned}
 \label{eqFitRho}
 \end{equation}
-где $\rho_{max}$ - плотность максимума распределения.
+где $\rho_{max}$ - плотность максимума распределения. Верно для систем с мягким взаимодействием. 
 }}
 \end{column}
 
@@ -702,19 +721,19 @@ K &= \frac{1}{2T\rho_{max}^2} \left( \frac{\partial P}{\partial \rho} \right)
 \begin{figure}[h]
 \begin{center}
 \begin{minipage}[h]{0.45\linewidth}
-\includegraphics[width=\textwidth, keepaspectratio]{plot_K_Potential LJ-12-3_1}
-\end{minipage}
-%\hfill
-\begin{minipage}[h]{0.45\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{plot_K_Potential LJ-12-4_1}
 \end{minipage}
-
+%\hfill
 \begin{minipage}[h]{0.45\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{plot_K_Potential LJ-12-5_1}
 \end{minipage}
-%\hfill
+
 \begin{minipage}[h]{0.45\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{plot_K_Potential LJ-12-6_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.45\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_K_Potential LJ-12-7_1}
 \end{minipage}
 \caption{Температурная зависимость коэффициента $K$.}
 \label{risK}
@@ -744,6 +763,7 @@ C = \rho_{max}\sqrt{2TK}
 \end{aligned}
 \label{eqCBetaK}
 \end{equation}
+Верно для систем с мягким взаимодействием. 
 }}
 \end{column}
 
@@ -760,21 +780,21 @@ C = \rho_{max}\sqrt{2TK}
 \begin{figure}[h]
 \begin{center}
 \begin{minipage}[h]{0.35\linewidth}
-\includegraphics[width=\textwidth, keepaspectratio]{plot_compress_Potential LJ-12-3_1}
-\end{minipage}
-%\hfill
-\begin{minipage}[h]{0.35\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{plot_compress_Potential LJ-12-4_1}
 \end{minipage}
-
+%\hfill
 \begin{minipage}[h]{0.35\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{plot_compress_Potential LJ-12-5_1}
 \end{minipage}
-%\hfill
+
 \begin{minipage}[h]{0.35\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{plot_compress_Potential LJ-12-6_1}
 \end{minipage}
-\caption{\tiny Температурная зависимость $\beta$ при различных потенциалах.}
+%\hfill
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_compress_Potential LJ-12-7_1}
+\end{minipage}
+\caption{\tiny Температурная зависимость $\beta$, совпадающая с сжимаемостью в мягких взаимодействиях, при различных потенциалах.}
 \label{risBeta}
 \end{center}
 \end{figure}
@@ -791,21 +811,21 @@ C = \rho_{max}\sqrt{2TK}
 \begin{figure}[h]
 \begin{center}
 \begin{minipage}[h]{0.35\linewidth}
-\includegraphics[width=\textwidth, keepaspectratio]{sound_speed_Potential LJ-12-3_1}
-\end{minipage}
-%\hfill
-\begin{minipage}[h]{0.35\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{sound_speed_Potential LJ-12-4_1}
 \end{minipage}
-
+%\hfill
 \begin{minipage}[h]{0.35\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{sound_speed_Potential LJ-12-5_1}
 \end{minipage}
-%\hfill
+
 \begin{minipage}[h]{0.35\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{sound_speed_Potential LJ-12-6_1}
 \end{minipage}
-\caption{\tiny Температурная зависимость скорости звука при различных потенциалах.}
+%\hfill
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{sound_speed_Potential LJ-12-7_1}
+\end{minipage}
+\caption{\tiny Температурная зависимость $C$, совпадающая со скоростью звука в мягких взаимодействиях, при различных потенциалах.}
 \label{risC}
 \end{center}
 \end{figure}
@@ -821,20 +841,20 @@ C = \rho_{max}\sqrt{2TK}
 \begin{figure}[h]
 \begin{center}
 \begin{minipage}[h]{0.35\linewidth}
-\includegraphics[width=\textwidth, keepaspectratio]{plot_moment_Potential LJ-12-3_1}
-\end{minipage}
-%\hfill
-\begin{minipage}[h]{0.35\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{plot_moment_Potential LJ-12-4_1}
 \end{minipage}
-
-
+%\hfill
 \begin{minipage}[h]{0.35\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{plot_moment_Potential LJ-12-5_1}
 \end{minipage}
-%\hfill
+
+
 \begin{minipage}[h]{0.35\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{plot_moment_Potential LJ-12-6_1}
+\end{minipage}
+%\hfill
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_moment_Potential LJ-12-7_1}
 \end{minipage}
 \caption{\tiny Температурная зависимость моментов величины $\mu_i = \mathbb{M} \left[ |\rho - \mathbb{M} \rho|^i \right]$.}
 \label{risMu}
@@ -846,14 +866,48 @@ C = \rho_{max}\sqrt{2TK}
 
 
 
-\section{Глава 3}
+
+\begin{frame}
+\transdissolve[duration=0.2]
+\frametitle{Влияние дальнодействия притяжения}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{temperatures_triple_critical_Widom}
+\caption{ \small Зависимость температур тройной, критической точки и линии Видома в зависимости от степени $m$.}
+\label{risTcpTtp}
+\end{center}
+\end{figure}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\transdissolve[duration=0.2]
+\frametitle{Влияние дальнодействия притяжения}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{effect_of_long-range_attraction}
+\caption{\small Отношение температур критической точки и линии Видома к тройной в зависимости от степени $m$.}
+\label{risTcpTtpWidoml}
+\end{center}
+\end{figure}
+
+\end{frame}
+
+
+
+
+%\section{Изучение диффузии}
+\subsection{ }
 
 
 \begin{frame}
 \begin{center}
-\begin{LARGE}
-\textbf{ГЛАВА 3} \\
-\end{LARGE}
 \vspace{5mm}
 \textbf{<<ДИФФУЗИЯ ОТ ТРОЙНОЙ ДО \\ КРИТИЧЕСКОЙ ТОЧКИ>>}
 \end{center}
@@ -958,8 +1012,8 @@ C = \rho_{max}\sqrt{2TK}
 \end{frame}
 
 
-\section{Результаты Главы 3}
-\subsection{Температурная зависимость диффузии и мобильности}
+%\section{Результаты Главы 3}
+\subsection{Температурная зависимость диффузии и подвижности}
 
 
 \begin{frame}
@@ -971,15 +1025,15 @@ C = \rho_{max}\sqrt{2TK}
 \includegraphics[width=\textwidth, keepaspectratio]{plot_diffusion_Potential LJ-12-4_1}
 \end{minipage}
 \begin{minipage}[h]{0.35\linewidth}
-\includegraphics[width=\textwidth, keepaspectratio]{plot_diffusion_Potential LJ-12-4_1}
-\end{minipage}
-\begin{minipage}[h]{0.35\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{plot_diffusion_Potential LJ-12-5_1}
 \end{minipage}
 \begin{minipage}[h]{0.35\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{plot_diffusion_Potential LJ-12-6_1}
 \end{minipage}
-\caption{\tiny Температурная зависимость коэффициента диффузии для различных потенциалов взаимодействия. Не доделана!}
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_diffusion_Potential LJ-12-7_1}
+\end{minipage}
+\caption{\tiny Температурная зависимость коэффициента диффузии для различных потенциалов взаимодействия.}
 \label{risD}
 \end{center}
 \end{figure}
@@ -999,16 +1053,16 @@ C = \rho_{max}\sqrt{2TK}
 \end{minipage}
 %\hfill
 \begin{minipage}[h]{0.35\linewidth}
-\includegraphics[width=\textwidth, keepaspectratio]{plot_mobility_Potential LJ-12-4_1}
-\end{minipage}
-\begin{minipage}[h]{0.35\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{plot_mobility_Potential LJ-12-5_1}
 \end{minipage}
-%\hfill
 \begin{minipage}[h]{0.35\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{plot_mobility_Potential LJ-12-6_1}
 \end{minipage}
-\caption{\tiny Температурная зависимость мобильности для различных потенциалов взаимодействия. Не доделана!}
+%\hfill
+\begin{minipage}[h]{0.35\linewidth}
+\includegraphics[width=\textwidth, keepaspectratio]{plot_mobility_Potential LJ-12-7_1}
+\end{minipage}
+\caption{\tiny Температурная зависимость подвижности для различных потенциалов взаимодействия.}
 \label{risMuDiff}
 \end{center}
 \end{figure}
@@ -1016,32 +1070,20 @@ C = \rho_{max}\sqrt{2TK}
 \end{frame}
 
 
-\subsection{Взаимосвязь термодинамических параметров, и параметров переноса}
+
+
 
 
 
 \begin{frame}
 \transdissolve[duration=0.2]
+\frametitle{Влияние дальнодействия притяжения на подвижность частиц}
 
 \begin{figure}[h]
 \begin{center}
-\begin{minipage}[h]{0.35\linewidth}
-\includegraphics[width=\textwidth, keepaspectratio]{plot_compress_mobility_Potential LJ-12-4_1}
-\end{minipage}
-%\hfill
-\begin{minipage}[h]{0.35\linewidth}
-\includegraphics[width=\textwidth, keepaspectratio]{plot_compress_mobility_Potential LJ-12-4_1}
-\end{minipage}
-
-\begin{minipage}[h]{0.35\linewidth}
-\includegraphics[width=\textwidth, keepaspectratio]{plot_compress_mobility_Potential LJ-12-5_1}
-\end{minipage}
-%\hfill
-\begin{minipage}[h]{0.35\linewidth}
-\includegraphics[width=\textwidth, keepaspectratio]{plot_compress_mobility_Potential LJ-12-6_1}
-\end{minipage}
-\caption{\tiny Зависимость мобильности от сжимаемости для различных потенциалов. Не доделана!}
-\label{risMuBeta}
+\includegraphics[width=0.65\textwidth]{mobility_fitting_factors}
+\caption{\small График зависимости параметров аппроксимации подвижности от тройной до критической точки линейной функцией.}
+\label{risFittingFactors}
 \end{center}
 \end{figure}
 
@@ -1051,59 +1093,40 @@ C = \rho_{max}\sqrt{2TK}
 
 
 
-\begin{frame}
-\transdissolve[duration=0.2]
-
-\begin{figure}[h]
-\begin{center}
-\begin{minipage}[h]{0.35\linewidth}
-\includegraphics[width=\textwidth, keepaspectratio]{sound_speed_mobility_Potential LJ-12-4_1}
-\end{minipage}
-%\hfill
-\begin{minipage}[h]{0.35\linewidth}
-\includegraphics[width=\textwidth, keepaspectratio]{sound_speed_mobility_Potential LJ-12-4_1}
-\end{minipage}
-
-\begin{minipage}[h]{0.35\linewidth}
-\includegraphics[width=\textwidth, keepaspectratio]{sound_speed_mobility_Potential LJ-12-5_1}
-\end{minipage}
-%\hfill
-\begin{minipage}[h]{0.35\linewidth}
-\includegraphics[width=\textwidth, keepaspectratio]{sound_speed_mobility_Potential LJ-12-6_1}
-\end{minipage}
-\caption{\tiny Зависимость скорости звука от мобильности для различных потенциалов. Не доделана!}
-\label{risCMu}
-\end{center}
-\end{figure}
-
-\end{frame}
-
-
-
-\section{Итоги ВКР}
+\subsection{Итоги ВКР}
 
 
 \begin{frame}
 	\transdissolve[duration=0.2]
-	\frametitle{Выводы работы}
+	\frametitle{Основные результаты работы:}
 	\footnotesize{
 \begin{enumerate}
-\item Была проведена модернизация алгоритма классификации и определение плотностей фаз в системе.
-
-\item Установлена роль притяжения на фазовые диаграммы систем с потенциалом обобщенного Леннарда - Джонса.
-
-\item Представлен способ определения сжимаемости и скорости звука в веществе, используя только распределение плотностей ячеек вороного, а так же способ определения линии Уидома для плотности.
-
-\item Показано, что температурная зависимость мобильности частиц зависит линейно от температуры в промежутке между тройной и критической точкой.
-
-\item Кроме того, была рассмотрена связь термодинамических свойств системы с параметрами переноса в веществе, предложен способ классификации с помощью нейронной сети.
-
+    \item В работе продемонстрированная актуальность метода изучения молекулярных систем с использованием построения диаграммы Вороного, который, используя только координаты частиц в разные моменты времени, позволяет узнать некоторые термодинамические параметры и параметры переноса в веществе.
+    \item Проведена модернизация алгоритма классификации частиц на фазы, которая позволяет улучшить качество классификации и убрать артефакты из статистики распределения плотности частиц.
+    \item Проведены серии моделирований обобщенного потенциала взаимодействия Леннарда--Джонса с различным дальнодействием притяжения для определения его роли в расположении критических, тройных точек и линий Видома на фазовых диаграммах вещества. 
+    \item Реализован программный пакет для изучения диффузии с разрешением отдельных частиц, и с его помощью установлена роль дальнодействия притяжения на подвижность в веществе. 
 \end{enumerate}
 	}
 \end{frame}
 
 
 
+
+
+%\begin{frame}
+%	\transdissolve[duration=0.2]
+%	\frametitle{Публикации}
+%	\footnotesize{
+%\begin{enumerate}
+%    \item Публикация 1.
+%    \item Публикация 2.
+%\end{enumerate}
+%	}
+%\end{frame}
+
+
+
+\subsection{ }
 
 
 \begin{frame}
