@@ -4,15 +4,19 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
 \usepackage{amsmath,amssymb}
+\usepackage{autonum}
 %\usepackage[font=scriptsize,format=plain,labelfont=bf,up,textfont=it,up]{caption}
 %\setbeamertemplate{caption}[numbered]
 \usepackage[labelformat=empty]{caption}
-\usetheme[numbers]{Dresden}
+%\usetheme[numbers]{Dresden}
+\usetheme{Boadilla}
 \usefonttheme[onlymath]{serif}
 \usecolortheme{dove}
 \graphicspath{{./images/}{./images2/}{./Ris/}}
 \setbeamertemplate{navigation symbols}{}
-
+\usepackage{ragged2e}
+\justifying
+\date{ }
 
 \begin{document}% начало презентации
 
@@ -65,22 +69,22 @@
 	\transdissolve[duration=0.2]
 	\frametitle{Актуальность}
 	
-	\normalsize{
+	\small{
 	
 Знание зависимости внешних параметров системы от потенциала взаимодействия, является открытым вопросом в физике мягкой материи. Точное прогнозирование, или хотя бы качественная их оценка, термодинамических параметров вещества, для которого известен состав и внешние условия (например, внешние электрические или магнитные поля), позволят избежать дорогостоящих исследований поведения каждого отдельного вещества. 
-
+\\
 Также это открывает возможности для создания новых веществ, удовлетворяющих потребности в определенном фазовом поведении, с нужными температурами плавления, скоростью звука в веществе или диффузией.
 	}
-	
+
 \end{frame}
 
 \begin{frame}
 	\transdissolve[duration=0.2]
 	\frametitle{Цель работы}
-	
-	\textbf{Цель работы} --
+\small{
+\textbf{Цель работы} --
 установить связь между дальнодействием притяжения в двумерной системе частиц, взаимодействующих посредством обобщенного потенциала Леннарда-Джонса, c фазовой диаграммой, и параметрами переноса.
-	
+	}
 \end{frame}
 
 
@@ -88,7 +92,7 @@
 \begin{frame}
 	\transdissolve[duration=0.2]
 	\frametitle{Задачи работы}
-	\footnotesize{
+	\small{
 \begin{enumerate}
 \item Разработка программного комплекса для расчета явлений переноса в $2D$ системах.
 \item Разработка методов определения термодинамических свойств системы по распределениям плотностей. 
@@ -114,12 +118,12 @@
 \end{frame}
 
 
-\subsection{Разбиение на ячейки вороного}
+\subsection{Разбиение на ячейки Вороного}
 
 
 \begin{frame}%Третий слайд
 \transdissolve[duration=0.2]
-\frametitle{Разбиение на ячейки вороного}
+\frametitle{Разбиение на ячейки Вороного}
 
 \begin{columns}
 
@@ -127,8 +131,8 @@
 {
 \begin{column}{0.3\linewidth}
 \begin{figure}[h]
-\center{\includegraphics[width=\textwidth, keepaspectratio]{deluanau}}
-\caption{Триангуляция Делоне}
+\center{\includegraphics[width=\textwidth, keepaspectratio]{voronoiExp}}
+\caption{\tiny Ячейки Вороного}
 \end{figure}
 \end{column}
 }
@@ -137,8 +141,8 @@
 {
 \begin{column}{0.3\linewidth}
 \begin{figure}[h]
-\center{\includegraphics[width=\textwidth, keepaspectratio]{Delaunay-voron}}
-\caption{Проведение перпендикуляров}
+\center{\includegraphics[width=\textwidth, keepaspectratio]{deluanau}}
+\caption{\tiny Триангуляция Делоне}
 \end{figure}
 \end{column}
 }
@@ -147,8 +151,8 @@
 {
 \begin{column}{0.3\linewidth}
 \begin{figure}[h]
-\center{\includegraphics[width=\textwidth, keepaspectratio]{voronoiExp}}
-\caption{Ячейки Вороного}
+\center{\includegraphics[width=\textwidth, keepaspectratio]{Delaunay-voron}}
+\caption{\tiny Проведение перпендикуляров}
 \end{figure}
 \end{column}
 }
@@ -166,7 +170,7 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 
 \begin{frame}%четвертый слайд
 \transdissolve[duration=0.2]
-\frametitle{Разбиение на ячейки вороного}
+\frametitle{Разбиение на ячейки Вороного}
 
 \begin{columns}
 
@@ -175,13 +179,14 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 \begin{figure}[h]
 
 \center{\includegraphics[width=\textwidth,  keepaspectratio]{PIVTURES}}
-
+\caption{ \tiny Изображение различных параметров, посчитанных с помощью разбиения на ячейки Вороного (плотность, параметр порядка, эффективные потенциалы, радиусы инерции сечения).}
 \end{figure}
 \end{column}
 }
 
 \begin{column}{0.47\linewidth}
 \uncover<2->{
+\tiny{
 \begin{itemize}
 \item Найти соседей каждой частицы
 \item Плотности
@@ -190,13 +195,13 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 \item Радиусы инерции сечения
 \item И т.д.
 \end{itemize}
-}
+}}
 \end{column}
 
 
 \end{columns}
 
-\vspace{15mm}
+\vspace{5mm}
 \tiny{
 Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional condensable systems //The Journal of Physical Chemistry C. – 2017. – Т. 121. – №. 48. – С. 26860-26868.
 }
@@ -244,7 +249,7 @@ R_i &= \frac{1}{N_{ni} + 1} \left( R_{0i} + \sum\limits_{j=1}^{N_{ni}} R_{0j} \r
 }
 \end{column}
 \end{columns}
-\vspace{4mm}
+\vspace{3mm}
 \tiny{
 Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional condensable systems //The Journal of Physical Chemistry C. – 2017. – Т. 121. – №. 48. – С. 26860-26868.
 }
@@ -263,7 +268,7 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 {
 \begin{figure}[h]
 \center{\includegraphics[width=\textwidth,  keepaspectratio]{PRM-Figure1-eps-converted-to}}
-\caption{\tiny Полный алгоритм классификации частиц в системе.}
+\caption{\tiny Алгоритм классификации частиц в системе.}
 \end{figure}
 }
 \end{column}
@@ -455,12 +460,14 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 
 \begin{columns}
 
-\begin{column}{0.45\linewidth}
+\begin{column}{0.5\linewidth}
+
 \begin{figure}[h]
 
-\center{\includegraphics[width=\textwidth,  keepaspectratio]{phas_1}}
-\caption{\tiny Система LJ 12-6 при $T / T_{cp} = 0.95$.}
+\center{\includegraphics[width=\textwidth,  keepaspectratio]{LJ}}
+\caption{\tiny Потенциал Леннарда - Джонса с различными степенями притяжения.}
 \end{figure}
+
 \end{column}
 
 \begin{column}{0.5\linewidth}
@@ -483,7 +490,7 @@ $\Delta T$ & 0.03 & 0.03 & 0.02 & 0.02 \\ \hline
 $\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 \end{tabular}
 \end{center}
-\caption{\tiny Параметры моделирования исследуемых систем. $m$ - степень слагаемого в уравнении \ref{eqLJ}, $\Delta T$ - шаг по температуре,  $\rho_0$ - плотность системы в целом.}
+\caption{\tiny Параметры некоторых моделирований исследуемых систем. $m$ - степень слагаемого в уравнении \ref{eqLJ}, $\Delta T$ - шаг по температуре,  $\rho_0$ - плотность системы в целом.}
 \label{tablParam}
 \end{table}
 
@@ -503,7 +510,7 @@ $\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 \begin{columns}
 
 
-\begin{column}{0.54\linewidth}
+\begin{column}{0.5\linewidth}
 \uncover<1->
 {
 \begin{figure}[h]
@@ -516,7 +523,7 @@ $\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 }
 \end{column}
 
-\begin{column}{0.6\linewidth}
+\begin{column}{0.55\linewidth}
 \uncover<2->
 {
 \begin{figure}[h]
@@ -541,7 +548,7 @@ $\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 \begin{columns}
 
 
-\begin{column}{0.5\linewidth}
+\begin{column}{0.45\linewidth}
 \uncover<1->
 {
 \begin{figure}[h]
@@ -554,7 +561,7 @@ $\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 }
 \end{column}
 
-\begin{column}{0.65\linewidth}
+\begin{column}{0.55\linewidth}
 \uncover<2->
 {
 \begin{figure}[h]
@@ -594,7 +601,7 @@ $\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 
 \begin{columns}
 
-\begin{column}{0.72\linewidth}
+\begin{column}{0.55\linewidth}
 \uncover<1->
 {
 \begin{figure}[h]
@@ -620,7 +627,7 @@ $\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 }
 \end{column}
 
-\begin{column}{0.45\linewidth}
+\begin{column}{0.5\linewidth}
 \uncover<2->
 {\tiny{
 \begin{equation}
@@ -654,6 +661,10 @@ LJ12-6  & 0.40  &  0.51   &  0.39   \\ \hline
 \end{column}
 
 \end{columns}
+\vspace{2mm}
+\tiny{
+Kryuchkov N. P. et al. Phase diagram of two-dimensional colloids with Yukawa repulsion and dipolar attraction //The Journal of chemical physics. – 2019. – Т. 150. – №. 10. – С. 104903.
+}
 \end{frame}
 
 
@@ -691,7 +702,7 @@ K &= \frac{1}{2T\rho_{max}^2} \left( \frac{\partial P}{\partial \rho} \right)
 \end{column}
 
 
-\begin{column}{0.65\linewidth}
+\begin{column}{0.55\linewidth}
 \uncover<2->
 {
 \begin{figure}[h]
@@ -703,6 +714,11 @@ K &= \frac{1}{2T\rho_{max}^2} \left( \frac{\partial P}{\partial \rho} \right)
 \end{column}
 
 \end{columns}
+\vspace{2mm}
+\tiny{
+Landau LD. EM Lifshitz Statistical Physics // Course of Theoretical
+Physics. –– 1980. –– Vol. 5. –– P. 396–400.
+}
 
 \end{frame}
 
@@ -715,7 +731,7 @@ K &= \frac{1}{2T\rho_{max}^2} \left( \frac{\partial P}{\partial \rho} \right)
 
 \begin{columns}
 
-\begin{column}{0.7\linewidth}
+\begin{column}{0.6\linewidth}
 \uncover<1->
 {
 \begin{figure}[h]
@@ -735,7 +751,7 @@ K &= \frac{1}{2T\rho_{max}^2} \left( \frac{\partial P}{\partial \rho} \right)
 \begin{minipage}[h]{0.45\linewidth}
 \includegraphics[width=\textwidth, keepaspectratio]{plot_K_Potential LJ-12-7_1}
 \end{minipage}
-\caption{Температурная зависимость коэффициента $K$.}
+\caption{\tiny Температурная зависимость коэффициента $K$.}
 \label{risK}
 \end{center}
 \end{figure}
@@ -874,7 +890,7 @@ C = \rho_{max}\sqrt{2TK}
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{temperatures_triple_critical_Widom}
-\caption{ \small Зависимость температур тройной, критической точки и линии Видома в зависимости от степени $m$.}
+\caption{ \tiny Зависимость температур тройной, критической точки и линии Видома в зависимости от степени $m$.}
 \label{risTcpTtp}
 \end{center}
 \end{figure}
@@ -892,7 +908,7 @@ C = \rho_{max}\sqrt{2TK}
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{effect_of_long-range_attraction}
-\caption{\small Отношение температур критической точки и линии Видома к тройной в зависимости от степени $m$.}
+\caption{\tiny Отношение температур критической точки и линии Видома к тройной в зависимости от степени $m$.}
 \label{risTcpTtpWidoml}
 \end{center}
 \end{figure}
@@ -925,7 +941,7 @@ C = \rho_{max}\sqrt{2TK}
 
 \begin{columns}
 
-\begin{column}{0.6\linewidth}
+\begin{column}{0.5\linewidth}
 
 \begin{figure}[h]
 \begin{center}
@@ -962,7 +978,7 @@ C = \rho_{max}\sqrt{2TK}
 
 \begin{columns}
 
-\begin{column}{0.6\linewidth}
+\begin{column}{0.55\linewidth}
 
 \begin{figure}[h]
 \begin{center}
@@ -987,7 +1003,7 @@ C = \rho_{max}\sqrt{2TK}
 \end{figure}
 
 \end{column}
-\begin{column}{0.5\linewidth}
+\begin{column}{0.45\linewidth}
 \tiny{
 
 Так как для двумерной системы верно равенство $\sigma^2(t) = 4Dt$, то коэффициент диффузии выражается следующей формулой:
@@ -999,14 +1015,15 @@ C = \rho_{max}\sqrt{2TK}
 
 Его можно получить путем аппроксимации среднеквадратичного смещения функцией $\sigma^2(t) = 4Dt + a$, где $a$ - подгоночный коэффициент.
 
-Кроме диффузии можно вычислить мобильность частиц в системе, которая определяется следующим уравнением:
+Кроме диффузии можно вычислить подвижность частиц в системе, которая определяется следующим уравнением:
 \begin{equation}
     \mu  = \frac{D}{T},
     \label{eqMuDiff}
 \end{equation}
-где $\mu$ - мобильность частиц.
+где $\mu$ - подвижность частиц.
 }
 \end{column}
+
 
 \end{columns}
 \end{frame}
@@ -1082,7 +1099,7 @@ C = \rho_{max}\sqrt{2TK}
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.65\textwidth]{mobility_fitting_factors}
-\caption{\small График зависимости параметров аппроксимации подвижности от тройной до критической точки линейной функцией.}
+\caption{\tiny График зависимости параметров аппроксимации подвижности от тройной до критической точки линейной функцией.}
 \label{risFittingFactors}
 \end{center}
 \end{figure}
@@ -1110,7 +1127,17 @@ C = \rho_{max}\sqrt{2TK}
 \end{frame}
 
 
-
+\begin{frame}
+	\transdissolve[duration=0.2]
+	\frametitle{Научная новизна:}
+	\footnotesize{
+\begin{enumerate}
+    \item Впервые показана зависимость критической и тройной точки от дальнодействия притяжения.
+    \item Применен метод разбиения на ячейки Вороного для нахождения линии Видома.
+    \item Показано влияние дальнодействия на подвижность частиц. 
+\end{enumerate}
+	}
+\end{frame}
 
 
 %\begin{frame}
