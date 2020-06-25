@@ -127,35 +127,32 @@
 
 \begin{columns}
 
-\uncover<1->
-{
+
 \begin{column}{0.3\linewidth}
 \begin{figure}[h]
 \center{\includegraphics[width=\textwidth, keepaspectratio]{voronoiExp}}
 \caption{\tiny Ячейки Вороного}
 \end{figure}
 \end{column}
-}
 
-\uncover<2->
-{
+
+
 \begin{column}{0.3\linewidth}
 \begin{figure}[h]
 \center{\includegraphics[width=\textwidth, keepaspectratio]{deluanau}}
 \caption{\tiny Триангуляция Делоне}
 \end{figure}
 \end{column}
-}
 
-\uncover<3->
-{
+
+
 \begin{column}{0.3\linewidth}
 \begin{figure}[h]
 \center{\includegraphics[width=\textwidth, keepaspectratio]{Delaunay-voron}}
 \caption{\tiny Проведение перпендикуляров}
 \end{figure}
 \end{column}
-}
+
 
 \end{columns}
 
@@ -174,7 +171,7 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 
 \begin{columns}
 
-\uncover<1->{
+
 \begin{column}{0.47\linewidth}
 \begin{figure}[h]
 
@@ -182,10 +179,10 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 \caption{ \tiny Изображение различных параметров, посчитанных с помощью разбиения на ячейки Вороного (плотность, параметр порядка, эффективные потенциалы, радиусы инерции сечения).}
 \end{figure}
 \end{column}
-}
+
 
 \begin{column}{0.47\linewidth}
-\uncover<2->{
+
 \tiny{
 \begin{itemize}
 \item Найти соседей каждой частицы
@@ -195,7 +192,7 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 \item Радиусы инерции сечения
 \item И т.д.
 \end{itemize}
-}}
+}
 \end{column}
 
 
@@ -218,14 +215,13 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 \begin{columns}
 
 \begin{column}{0.47\linewidth}
-\uncover<1->{
+
 \begin{figure}[h]
 \center{\includegraphics[width=0.7\textwidth, keepaspectratio]{rgcell}}
 \caption{ \tiny а) Кристалл б) Газ.}
 \end{figure}
-}
 
-\uncover<2->{
+
 \tiny{
 \begin{equation}
 \begin{aligned}
@@ -236,17 +232,16 @@ R_i &= \frac{1}{N_{ni} + 1} \left( R_{0i} + \sum\limits_{j=1}^{N_{ni}} R_{0j} \r
 \end{equation}
 }
 \tiny{где $S_i$ - площадь ячейки, $N_{ni}$ - количество соседей, $r_{ij}$ - расстояние от рассматриваемой частицы до соседней.}
-}
+
 
 \end{column}
 \begin{column}{0.47\linewidth}
-\uncover<3->
-{
+
 \begin{figure}[h]
 \center{\includegraphics[width=\textwidth,  keepaspectratio]{MPI-Figure1}}
 \caption{ \tiny Распределение параметра $R$.}
 \end{figure}
-}
+
 \end{column}
 \end{columns}
 \vspace{3mm}
@@ -264,18 +259,16 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 \begin{columns}
 
 \begin{column}{0.47\linewidth}
-\uncover<1->
-{
+
 \begin{figure}[h]
 \center{\includegraphics[width=\textwidth,  keepaspectratio]{PRM-Figure1-eps-converted-to}}
 \caption{\tiny Алгоритм классификации частиц в системе.}
 \end{figure}
-}
+
 \end{column}
 
 \begin{column}{0.47\linewidth}
-\uncover<2->
-{\tiny{
+\tiny{
 Корректировка фаз включает в себя следующие условия:
 \begin{itemize}
 \item частица конденсата, не имеющая среди своих соседей частиц того же типа, является поверхностью.
@@ -283,7 +276,7 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 \item газовая частица, не имеющая соседних частиц того же класса,  является поверхностью.
 \item частица поверхности, все соседи которой принадлежат к классу "конденсат" или "газ", так же принадлежат к этому классу.
 \end{itemize}
-}}
+}
 \end{column}
 
 \end{columns}
@@ -305,19 +298,17 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 \begin{columns}
 
 \begin{column}{0.47\linewidth}
-\uncover<1->
-{
+
 \begin{figure}[h]
 \center{\includegraphics[width=\textwidth,  keepaspectratio]{phas_200_0.48_cut}}
 \caption{\tiny Результат алгоритма классификации.}
 \end{figure}
-}
+
 \end{column}
 
 
 \begin{column}{0.47\linewidth}
-\uncover<2->
-{\tiny{
+\tiny{
 Недостатки метода распознавания фаз:
 \begin{itemize}
 \item распознавание пустот внутри конденсированного кластера, как его часть.
@@ -325,7 +316,7 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 \item нерегулярная граница кластера из поверхностных частиц.
 \item частицы на поверхности кластера с низкой плотностью, распознанные как конденсат а не поверхность, вносят ошибку в вычисления мат. ожидания плотности.
 \end{itemize}
-}}
+}
 \end{column}
 
 \end{columns}
@@ -347,8 +338,7 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 \begin{columns}
 
 \begin{column}{0.47\linewidth}
-\uncover<1->
-{\tiny{
+\tiny{
 Дополнительные условия в корректировки фаз:
 \begin{itemize}
 \item частица поверхности, не имеющая среди соседей частиц газа, является конденсатом.
@@ -356,18 +346,17 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 \item частицы конденсата, плотность которых сопоставима с плотностью поверхностных частиц, являются поверхностью. Данная проверка делается дважды (перед всеми остальными и после).
 \item частица конденсата, которая имеет меньше 3 соседних частиц, так же принадлежащих к конденсату, является поверхностью.
 \end{itemize}
-}}
+}
 \end{column}
 
 
 \begin{column}{0.47\linewidth}
-\uncover<2->
-{
+
 \begin{figure}[h]
 \center{\includegraphics[width=\textwidth,  keepaspectratio]{phas_2}}
 \caption{\tiny Результат обновленного алгоритма классификации.}
 \end{figure}
-}
+
 \end{column}
 
 \end{columns}
@@ -388,21 +377,19 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 
 
 \begin{column}{0.55\linewidth}
-\uncover<1->
-{
+
 \begin{figure}[h]
 \center{\includegraphics[width=\textwidth,  keepaspectratio]{Mrho}}
 \end{figure}
-}
+
 \end{column}
 
 \begin{column}{0.4\linewidth}
-\uncover<2->
-{
+
 \begin{figure}[h]
 \center{\includegraphics[width=\textwidth,  keepaspectratio]{voronoiExp}}
 \end{figure}
-}
+
 \end{column}
 
 \end{columns}
@@ -423,17 +410,15 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 
 
 \begin{column}{0.55\linewidth}
-\uncover<1->
-{
+
 \begin{figure}[h]
 \center{\includegraphics[width=\textwidth,  keepaspectratio]{plot_hist_all_0.520}}
 \end{figure}
-}
+
 \end{column}
 
 \begin{column}{0.4\linewidth}
-\uncover<2->
-{
+
 \tiny{
 Плотность газа в системе вычисляется косвенно по формуле:
 \begin{equation}
@@ -442,7 +427,7 @@ Ovcharov P. V. et al. Particle-resolved phase identification in two-dimensional 
 \end{equation}
 где $S$ - суммарная площадь всех рассматриваемых кадров, $N_g, N_b, N_c$ - суммарное число частиц газа, поверхности и конденсата соответственно на всех рассматриваемых кадрах моделирования, $\mathbb{M}\rho_c$ - мат. ожидание плотности частиц конденсата на всех рассматриваемых кадрах.
 }
-}
+
 \end{column}
 
 \end{columns}
@@ -523,8 +508,7 @@ $\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 
 
 \begin{column}{0.5\linewidth}
-\uncover<1->
-{
+
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=\textwidth]{Voronoi}
@@ -532,12 +516,11 @@ $\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 \label{risvoronoiExp}
 \end{center}
 \end{figure}
-}
+
 \end{column}
 
 \begin{column}{0.55\linewidth}
-\uncover<2->
-{
+
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=\textwidth]{RG}
@@ -545,7 +528,7 @@ $\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 \label{risIregExp}
 \end{center}
 \end{figure}
-}
+
 \end{column}
 
 \end{columns}
@@ -561,8 +544,7 @@ $\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 
 
 \begin{column}{0.45\linewidth}
-\uncover<1->
-{
+
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=\textwidth]{classification}
@@ -570,12 +552,11 @@ $\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 \label{risClassExp}
 \end{center}
 \end{figure}
-}
+
 \end{column}
 
 \begin{column}{0.55\linewidth}
-\uncover<2->
-{
+
 \begin{figure}[h]
 \begin{center}
 
@@ -598,7 +579,7 @@ $\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 \label{risRhoM}
 \end{center}
 \end{figure}
-}
+
 \end{column}
 
 \end{columns}
@@ -614,8 +595,7 @@ $\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 \begin{columns}
 
 \begin{column}{0.55\linewidth}
-\uncover<1->
-{
+
 \begin{figure}[h]
 \begin{center}
 \begin{minipage}[h]{0.47\linewidth}
@@ -636,12 +616,11 @@ $\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 \label{risPhaseDiagrammExp}
 \end{center}
 \end{figure}
-}
+
 \end{column}
 
 \begin{column}{0.5\linewidth}
-\uncover<2->
-{\tiny{
+\tiny{
 \begin{equation}
 \begin{aligned}
 \rho_l - \rho_g &\simeq A (T_{CP} - T)^{\beta_c} \\
@@ -650,9 +629,8 @@ $\rho_0$ & 0.3  &  0.4  &  0.4  &  0.4  \\ \hline
 \label{eqFitFhase}
 \end{equation}
 где $T_{CP}, \rho_{CP}$ - эффективная температура и плотность критической точки, $A, a$ - варьируемые параметры, $\rho_l, \rho_g$ - плотность жидкости и газа соответственно, $\beta_c$ - критический индекс системы.
-}}
-\uncover<3->
-{
+}
+
 \tiny{
 \begin{table}[h]
 %\begin{center}
@@ -669,7 +647,7 @@ LJ12-6  & 0.40  &  0.51   &  0.39   \\ \hline
 \label{tablSystemConst}
 \end{table}
 }
-}
+
 \end{column}
 
 \end{columns}
@@ -692,8 +670,7 @@ Kryuchkov N. P. et al. Phase diagram of two-dimensional colloids with Yukawa rep
 \begin{columns}
 
 \begin{column}{0.45\linewidth}
-\uncover<1->
-{\tiny{
+\tiny{
 Равновесные колебания вблизи среднего значения объема определяются уравнением состояния системы, и соответствующая функция распределения вероятности $p(V)$ равна:
 \begin{equation}
 p(V) \varpropto \exp\left[ \frac{1}{2T} \left( \frac{\partial P}{\partial V} \right)  \left(V - V_0 \right)^2 \right],
@@ -710,19 +687,18 @@ K &= \frac{1}{2T\rho_{max}^2} \left( \frac{\partial P}{\partial \rho} \right)
 \label{eqFitRho}
 \end{equation}
 где $\rho_{max}$ - плотность максимума распределения. Верно для систем с мягким взаимодействием. 
-}}
+}
 \end{column}
 
 
 \begin{column}{0.55\linewidth}
-\uncover<2->
-{
+
 \begin{figure}[h]
 \center{\includegraphics[width=\textwidth,  keepaspectratio]{FitDensity}}
 \caption{\tiny Аппроксимация пика распределения плотности при различной
 температуре на примере потенциала LJ12-6.}
 \end{figure}
-}
+
 \end{column}
 
 \end{columns}
@@ -744,8 +720,7 @@ Physics. –– 1980. –– Vol. 5. –– P. 396–400.
 \begin{columns}
 
 \begin{column}{0.6\linewidth}
-\uncover<1->
-{
+
 \begin{figure}[h]
 \begin{center}
 \begin{minipage}[h]{0.45\linewidth}
@@ -767,12 +742,11 @@ Physics. –– 1980. –– Vol. 5. –– P. 396–400.
 \label{risK}
 \end{center}
 \end{figure}
-}
+
 \end{column}
 
 \begin{column}{0.45\linewidth}
-\uncover<2->
-{\tiny{
+\tiny{
 По коэффициенту $K$ можно определить сжимаемость и адиабатическая скорость звука:
 \begin{equation}
 \begin{aligned}
@@ -792,7 +766,7 @@ C = \rho_{max}\sqrt{2TK}
 \label{eqCBetaK}
 \end{equation}
 Верно для систем с мягким взаимодействием. 
-}}
+}
 \end{column}
 
 \end{columns}
